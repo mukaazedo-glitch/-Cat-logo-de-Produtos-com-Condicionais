@@ -7,7 +7,7 @@
 
 <h2>Meu Boletim de Notas</h2>
 
-@* Passo 3 do slide: Criando a tabela *@
+
 <table class="table table-striped" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
     <thead>
         <tr style="background-color: #212529; color: white; text-align: left;">
@@ -38,7 +38,7 @@
                     }
                 </td>
 
-                @* Passo 6 do slide: @switch para classificar em A, B, C ou D *@
+                
                 <td style="padding: 10px; border: 1px solid #ddd;">
                     @{
                         char letra;
@@ -63,7 +63,7 @@
             </tr>
         }
         
-        @* Passo 5 do slide: Média geral no final da tabela *@
+        
         @{
             double mediaGeral = somaNotas / disciplinas.Count;
         }

@@ -15,7 +15,7 @@
         </tr>
     </thead>
     <tbody>
-        @* Passo 5: Usando @for para criar a tabela automaticamente *@
+        
         @for (int i = 0; i < produtos.Count; i++)
         {
             // Passo 6: Usando @if para pintar de verde se o preço for menor que R$ 100
@@ -30,5 +30,5 @@
     </tbody>
 </table>
 
-@* Passo 7: Mostra o total de produtos da lista *@
+
 <p style="margin-top: 15px; font-size: 16px;"><strong>Total: @produtos.Count produtos</strong></p>
