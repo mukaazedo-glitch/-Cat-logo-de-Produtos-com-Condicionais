@@ -1,0 +1,34 @@
+@{
+    ViewData["Title"] = "Catálogo de Produtos";
+    var produtos = ViewBag.Produtos as List<string>;
+    var precos = ViewBag.Precos as List<double>;
+}
+
+<h2>Catálogo de Produtos</h2>
+
+<table class="table table-bordered" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+    <thead>
+        <tr style="background-color: #007bff; color: white; text-align: left;">
+            <th style="padding: 10px; border: 1px solid #ddd;">#</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Nome do Produto</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Preço</th>
+        </tr>
+    </thead>
+    <tbody>
+        @* Passo 5: Usando @for para criar a tabela automaticamente *@
+        @for (int i = 0; i < produtos.Count; i++)
+        {
+            // Passo 6: Usando @if para pintar de verde se o preço for menor que R$ 100
+            string estiloVerde = precos[i] < 100.00 ? "background-color: #d4edda; color: #155724; font-weight: bold;" : "";
+
+            <tr style="@estiloVerde">
+                <td style="padding: 10px; border: 1px solid #ddd;">@(i + 1)</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">@produtos[i]</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">R$ @precos[i].ToString("F2")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@* Passo 7: Mostra o total de produtos da lista *@
+<p style="margin-top: 15px; font-size: 16px;"><strong>Total: @produtos.Count produtos</strong></p>

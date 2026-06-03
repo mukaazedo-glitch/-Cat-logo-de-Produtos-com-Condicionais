@@ -7,6 +7,7 @@
 
 <h2>Meu Boletim de Notas</h2>
 
+@* Passo 3 do slide: Criando a tabela *@
 <table class="table table-striped" style="width: 100%; border-collapse: collapse; margin-top: 20px;">
     <thead>
         <tr style="background-color: #212529; color: white; text-align: left;">
@@ -17,7 +18,6 @@
         </tr>
     </thead>
     <tbody>
-        @* Passo 3: Criando a tabela *@
         @for (int i = 0; i < disciplinas.Count; i++)
         {
             somaNotas += notas[i];
@@ -26,7 +26,7 @@
                 <td style="padding: 10px; border: 1px solid #ddd;">@disciplinas[i]</td>
                 <td style="padding: 10px; border: 1px solid #ddd;">@notas[i].ToString("F1")</td>
                 
-                @* Passo 4: @if para exibir Aprovado (verde) ou Reprovado (vermelho) *@
+                @* Passo 4 do slide: @if para exibir Aprovado (verde) ou Reprovado (vermelho) *@
                 <td style="padding: 10px; border: 1px solid #ddd;">
                     @if (notas[i] >= 6.0)
                     {
@@ -38,7 +38,7 @@
                     }
                 </td>
 
-                @* Passo 6: @switch para classificar em A, B, C ou D *@
+                @* Passo 6 do slide: @switch para classificar em A, B, C ou D *@
                 <td style="padding: 10px; border: 1px solid #ddd;">
                     @{
                         char letra;
@@ -63,7 +63,7 @@
             </tr>
         }
         
-        @* Passo 5: Média geral no final da tabela *@
+        @* Passo 5 do slide: Média geral no final da tabela *@
         @{
             double mediaGeral = somaNotas / disciplinas.Count;
         }
